@@ -9,7 +9,7 @@ from streamlit_extras.stylable_container import stylable_container
 
 st.set_page_config(layout='centered')
 
-model = Model(PATH)
+model = Model('https://gpt4all.io/models/ggml-gpt4all-j.bin')
 
 def show_messages(text):
     
