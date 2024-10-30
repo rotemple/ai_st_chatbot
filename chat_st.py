@@ -1,7 +1,7 @@
 import streamlit as st 
 
 
-PATH = '/Users/tuk35906/Downloads/ggml-gpt4all-j.bin'
+PATH = 'https://gpt4all.io/models/ggml-gpt4all-j.bin'
 import streamlit as st
 from gpt4allj import Model
 from streamlit_option_menu import option_menu
