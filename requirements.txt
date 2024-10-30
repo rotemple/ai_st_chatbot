@@ -1,3 +1,4 @@
 gpt4all-j
 gpt4all
 streamlit-extras
+streamlit-option-menu
