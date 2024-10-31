@@ -27,7 +27,7 @@ def get_messages(prompt):
     })
     headers = {
       'Content-Type': 'application/json',
-      'Authorization': f"Bearer {ARLIAI_API_KEY}"
+      'Authorization': f"Bearer {st.secrets['ARLIAI_API_KEY']}"
     }
     
     response = requests.request("POST", url, headers=headers, data=payload)
