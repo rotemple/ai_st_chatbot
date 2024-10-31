@@ -87,7 +87,7 @@ container = stylable_container(key="red_button",
                                """,
     )
 with container:
-    st.markdown('<h1 class="font">GPT4ALLJ AI Paper/Panel Topic Generator</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="font">Llama 3.1 AI Paper/Panel Topic Generator</h1><h2>Built on <a href='https://www.arliai.com/'>ARLI AI</a></h2>', unsafe_allow_html=True)
    
 
 
@@ -114,6 +114,6 @@ with container:
         show_messages(text)
     st.markdown('*Chatbot code adapted from : https://github.com/ajvikram/streamlit-gpt')
    
-    st.markdown("""<h4>Caveats</h3><p style="font-size:1rem">For experimentation purposes only. The organizers cannot guarantee the veracity of outputs. This model does not record chat data or any personal information.</p><p>See <a href="https://huggingface.co/nomic-ai/gpt4all-j">GPT4All-J Model Card</a> for more information.</p><h4>GPT4All Paper</h4><p>Anand, Y., Nussbaum, Z., Duderstadt, B., & Schmidt, B. M. (n.d.). GPT4All-J: An Apache-2 Licensed Assistant-Style Chatbot.
+    st.markdown("""<h4>Caveats</h3><p style="font-size:1rem">For experimentation purposes only. The organizers cannot guarantee the veracity of outputs or warrant against potentially offensive output. This model does not record chat data or any personal information.</p><p>See <a href="https://huggingface.co/ArliAI">Arli AI Organization Card</a> for more information.</p>.
 </p>""",unsafe_allow_html=True)
 
