@@ -60,7 +60,7 @@ st.markdown(""" <style>
     textarea p{ font-size:1.15rem !important}
     .st-emotion-cache-jkfxgf p {font-size: 1.25rem !important;
     }    
-    number
+    .stNumberInput {width:50% !important}
                     </style> """, unsafe_allow_html=True)
 
 container = stylable_container(key="red_button",
@@ -83,17 +83,18 @@ with container:
    
     text = st.empty()
     show_messages(text)
-    temp = st.number_input('temperature',value=0.7)
-    p = st.number_input('top p',value=.9)
-    k = st.number_input('top k', value=40)
-    max_tokens = st.number_input('max token length',value=512)
+    
     
     prompt = st.text_input("Prompt:", value="Generate cutting-edge AI paper ideas for a conference presentation . . .")
+    
     if st.button("Send"):
         with st.spinner("Generating response..."):
             st.session_state["messages"] += [{"role": "You", "content": prompt}]
             print(st.session_state["messages"][-1]["content"])
-            
+            temp = st.number_input('temperature',value=0.7)
+            p = st.number_input('top p',value=.9)
+            k = st.number_input('top k', value=40)
+            max_tokens = st.number_input('max token length',value=512)
             message_response = get_messages(st.session_state["messages"][-1]["content"],temp,p,k,max_tokens)
             st.session_state["messages"] += [
                 {"role": "AI", "content": message_response}
