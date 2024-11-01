@@ -6,7 +6,7 @@ from streamlit_extras.stylable_container import stylable_container
 st.set_page_config(layout='centered')
 
 
-def get_messages(prompt):
+def get_messages(prompt,p,k, max_tokens):
 
     url = "https://api.arliai.com/v1/chat/completions"
     
@@ -19,10 +19,10 @@ def get_messages(prompt):
         {"role": "user", "content": prompt}
       ],
       "repetition_penalty": 1.1,
-      "temperature": 0.7,
-      "top_p": 0.9,
-      "top_k": 40,
-      "max_tokens": 1024,
+      "temperature": temp,
+      "top_p": p,
+      "top_k": k,
+      "max_tokens": max_tokens,
       "stream": False
     })
     headers = {
@@ -87,6 +87,10 @@ container = stylable_container(key="red_button",
                                """,
     )
 with container:
+    temp = st.number_input('temperature',value=0.7)
+    p = st.number_input('top p',value=.9)
+    k = st.number_input('top k', value=40)
+    max_tokens = st.number_input('max token length',value=512)
     st.markdown('<h1 class="font">Llama 3.1 AI Paper/Panel Topic Generator</h1><h2>Built on <a href="https://www.arliai.com/">ARLI AI</a></h2>', unsafe_allow_html=True)
    
 
