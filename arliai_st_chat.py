@@ -73,7 +73,9 @@ container = stylable_container(key="red_button",
         
                                """,
     )
-with container:
+
+col1,col2 = st.columns(2)
+with col1:
     
     st.markdown("""<h1 class="font">Llama 3.1 AI Paper/Panel Topic Generator</h1><h2>Built on <a href="https://www.arliai.com/">ARLI AI</a></h2>""", unsafe_allow_html=True)
    
@@ -82,27 +84,26 @@ with container:
     
     
     prompt = st.text_input("Prompt:", value="Generate cutting-edge AI paper ideas for a conference presentation . . .")
-    col1,col2 = st.columns(2)
-    with col2:
-        temp = st.number_input('temperature',value=0.7)
-        p = st.number_input('top p',value=.9)
-        k = st.number_input('top k', value=40)
-        max_tokens = st.number_input('max token length',value=512)
-    with col1:
-        if st.button("Send"):
-            with st.spinner("Generating response..."):
-                st.session_state["messages"] += [{"role": "You", "content": prompt}]
-                print(st.session_state["messages"][-1]["content"])
+with col2:
+    temp = st.number_input('temperature',value=0.7)
+    p = st.number_input('top p',value=.9)
+    k = st.number_input('top k', value=40)
+    max_tokens = st.number_input('max token length',value=512)
+with container:
+    if st.button("Send"):
+        with st.spinner("Generating response..."):
+            st.session_state["messages"] += [{"role": "You", "content": prompt}]
+            print(st.session_state["messages"][-1]["content"])
                 
-                message_response = get_messages(st.session_state["messages"][-1]["content"],temp,p,k,max_tokens)
-                st.session_state["messages"] += [
+            message_response = get_messages(st.session_state["messages"][-1]["content"],temp,p,k,max_tokens)
+            st.session_state["messages"] += [
                     {"role": "AI", "content": message_response}
                 ]
-                show_messages(text)
-    
-        if st.button("Clear Chat"):
-            st.session_state["messages"] = BASE_PROMPT
             show_messages(text)
+    
+    if st.button("Clear Chat"):
+        st.session_state["messages"] = BASE_PROMPT
+        show_messages(text)
     st.markdown('*Chatbot code adapted from : https://github.com/ajvikram/streamlit-gpt')
     st.markdown('## Model Parameters')
     
