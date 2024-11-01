@@ -97,7 +97,7 @@ with container:
 
     prompt = st.text_input("Prompt:", value="Generate cutting-edge AI paper ideas for a conference presentation . . .")
 
-    with st.sidebar():
+    with st.sidebar:
         temp = st.number_input('temperature',value=0.7)
         p = st.number_input('top p',value=.9)
         k = st.number_input('top k', value=40)
