@@ -68,8 +68,7 @@ st.markdown(""" <style>
     textarea p{ font-size:1.15rem !important}
     .st-emotion-cache-jkfxgf p {font-size: 1.25rem !important;
     }
-    .stColumn st-emotion-cache-17zt2d6 e1f1d6gn3 (width:70% !important;}
-    .stColumn st-emotion-cache-17zt2d6 e1f1d6gn3 {width:30% !important;}
+   #number_input_3 {width:50% !important}
     
                     </style> """, unsafe_allow_html=True)
 
@@ -87,8 +86,7 @@ container = stylable_container(key="red_button",
 
                                """,
     )
-col1, col2 = st.columns(2,vertical_alignment='bottom')
-with col1:
+with container:
     
     st.markdown('<h1 class="font">Llama 3.1 AI Paper/Panel Topic Generator</h1><h2>Built on <a href="https://www.arliai.com/">ARLI AI</a></h2>', unsafe_allow_html=True)
    
@@ -99,11 +97,11 @@ with col1:
 
     prompt = st.text_input("Prompt:", value="Generate cutting-edge AI paper ideas for a conference presentation . . .")
 
-    with col2:
-        temp = st.number_input('temperature',value=0.7)
-        p = st.number_input('top p',value=.9)
-        k = st.number_input('top k', value=40)
-        max_tokens = st.number_input('max token length',value=512)
+    
+    temp = st.number_input('temperature',value=0.7)
+    p = st.number_input('top p',value=.9)
+    k = st.number_input('top k', value=40)
+    max_tokens = st.number_input('max token length',value=512)
     if st.button("Send"):
         with st.spinner("Generating response..."):
             st.session_state["messages"] += [{"role": "You", "content": prompt}]
