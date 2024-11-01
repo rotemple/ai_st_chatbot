@@ -68,7 +68,7 @@ st.markdown(""" <style>
     textarea p{ font-size:1.15rem !important}
     .st-emotion-cache-jkfxgf p {font-size: 1.25rem !important;
     }
-   #number_input_3 {width:50% !important}
+   .st-emotion-cache-6v4t1a e116k4er3 {width:50% !important}
     
                     </style> """, unsafe_allow_html=True)
 
