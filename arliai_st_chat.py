@@ -60,6 +60,7 @@ st.markdown(""" <style>
     textarea p{ font-size:1.15rem !important}
     .st-emotion-cache-jkfxgf p {font-size: 1.25rem !important;
     }    
+    number
                     </style> """, unsafe_allow_html=True)
 
 container = stylable_container(key="red_button",
@@ -82,7 +83,11 @@ with container:
    
     text = st.empty()
     show_messages(text)
-
+    temp = st.number_input('temperature',value=0.7)
+    p = st.number_input('top p',value=.9)
+    k = st.number_input('top k', value=40)
+    max_tokens = st.number_input('max token length',value=512)
+    
     prompt = st.text_input("Prompt:", value="Generate cutting-edge AI paper ideas for a conference presentation . . .")
     if st.button("Send"):
         with st.spinner("Generating response..."):
@@ -100,10 +105,7 @@ with container:
         show_messages(text)
     st.markdown('*Chatbot code adapted from : https://github.com/ajvikram/streamlit-gpt')
     st.markdown('## Model Parameters')
-    temp = st.number_input('temperature',value=0.7)
-    p = st.number_input('top p',value=.9)
-    k = st.number_input('top k', value=40)
-    max_tokens = st.number_input('max token length',value=512)
+    
    
     st.markdown("""<h4>Caveats</h3><p style="font-size:1rem">For experimentation purposes only. The organizers cannot guarantee the veracity of outputs or warrant against potentially offensive output. This model does not record chat data or any personal information.</p><p>See <a href="https://huggingface.co/ArliAI">Arli AI Organization Card</a> for more information.</p>.
 </p>""",unsafe_allow_html=True)
