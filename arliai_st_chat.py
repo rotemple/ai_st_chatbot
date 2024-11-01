@@ -96,10 +96,10 @@ with container:
     show_messages(text)
 
     prompt = st.text_input("Prompt:", value="Generate cutting-edge AI paper ideas for a conference presentation . . .")
-    temp = st.number_input('temperature',value=0.7)
-    p = st.number_input('top p',value=.9)
-    k = st.number_input('top k', value=40)
-    max_tokens = st.number_input('max token length',value=512)
+    temp = st.sidebar.st.number_input('temperature',value=0.7)
+    p = st.sidebar.st.number_input('top p',value=.9)
+    k = st.sidebar.st.number_input('top k', value=40)
+    max_tokens = st.sidebar.st.number_input('max token length',value=512)
     if st.button("Send"):
         with st.spinner("Generating response..."):
             st.session_state["messages"] += [{"role": "You", "content": prompt}]
