@@ -59,7 +59,7 @@ st.markdown(""" <style>
                 }
     textarea p{ font-size:1.15rem !important}
     .st-emotion-cache-jkfxgf p {font-size: 1.25rem !important;
-    }    
+    }""",unsafe_allow_html=True)
     
 
 container = stylable_container(key="red_button",
@@ -70,10 +70,7 @@ container = stylable_container(key="red_button",
                color: white;
                border-radius: 20px;
            }
-            
-           
-            
-
+        
                                """,
     )
 with container:
