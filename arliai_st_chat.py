@@ -78,7 +78,7 @@ container = stylable_container(key="red_button",
     )
 with container:
     
-    st.markdown('<h1 class="font">Llama 3.1 AI Paper/Panel Topic Generator</h1><h2>Built on <a href="https://www.arliai.com/">ARLI AI</a></h2>', unsafe_allow_html=True)
+    st.markdown("""<h1 class="font">Llama 3.1 AI Paper/Panel Topic Generator</h1><h2>Built on <a href="https://www.arliai.com/">ARLI AI</a></h2>""", unsafe_allow_html=True)
    
     text = st.empty()
     show_messages(text)
