@@ -6,7 +6,7 @@ from streamlit_extras.stylable_container import stylable_container
 st.set_page_config(layout='centered')
 
 
-def get_messages(prompt,p,k, max_tokens):
+def get_messages(prompt,temp, p, k, max_tokens):
 
     url = "https://api.arliai.com/v1/chat/completions"
     
@@ -105,7 +105,7 @@ with container:
             st.session_state["messages"] += [{"role": "You", "content": prompt}]
             print(st.session_state["messages"][-1]["content"])
             
-            message_response = get_messages(st.session_state["messages"][-1]["content"])
+            message_response = get_messages(st.session_state["messages"][-1]["content"],temp,p,k,max_tokens)
             
             
             st.session_state["messages"] += [
