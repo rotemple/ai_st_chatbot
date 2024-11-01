@@ -86,8 +86,8 @@ container = stylable_container(key="red_button",
 
                                """,
     )
-col1, col2 = st.columns(2)
-with col2:
+col1, col2 = st.columns(2,vertical_alignment='bottom')
+with col1:
     
     st.markdown('<h1 class="font">Llama 3.1 AI Paper/Panel Topic Generator</h1><h2>Built on <a href="https://www.arliai.com/">ARLI AI</a></h2>', unsafe_allow_html=True)
    
@@ -98,7 +98,7 @@ with col2:
 
     prompt = st.text_input("Prompt:", value="Generate cutting-edge AI paper ideas for a conference presentation . . .")
 
-    with col1:
+    with col2:
         temp = st.number_input('temperature',value=0.7)
         p = st.number_input('top p',value=.9)
         k = st.number_input('top k', value=40)
