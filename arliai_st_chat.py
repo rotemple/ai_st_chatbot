@@ -29,26 +29,19 @@ def get_messages(prompt,temp, p, k, max_tokens):
       'Content-Type': 'application/json',
       'Authorization': f"Bearer {st.secrets['ARLIAI_API_KEY']}"
     }
-    
     response = requests.request("POST", url, headers=headers, data=payload)
     message = json.loads(response.text)
-    
     content = message['choices'][0]['message']['content']
     
     return content
 
 def show_messages(text):
-    
     messages_str = [
         f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
     ]
     text.text_area("Chat", value=str("\n".join(messages_str)), height=150)
-    
-
 
 BASE_PROMPT = [{"role": "AI", "content": "You are an AI expert who helps researchers."}]
-
-
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = BASE_PROMPT
@@ -63,13 +56,10 @@ st.markdown(""" <style>
     textarea {
                     font-size: 1.15rem !important;
                     height:250px !important;
-                    
                 }
     textarea p{ font-size:1.15rem !important}
     .st-emotion-cache-jkfxgf p {font-size: 1.25rem !important;
-    }
-   .stElementContainer element-container st-emotion-cache-yh23m5 e1f1d6gn4 {width:50% !important}
-    
+    }    
                     </style> """, unsafe_allow_html=True)
 
 container = stylable_container(key="red_button",
@@ -90,26 +80,16 @@ with container:
     
     st.markdown('<h1 class="font">Llama 3.1 AI Paper/Panel Topic Generator</h1><h2>Built on <a href="https://www.arliai.com/">ARLI AI</a></h2>', unsafe_allow_html=True)
    
-
-
     text = st.empty()
     show_messages(text)
 
     prompt = st.text_input("Prompt:", value="Generate cutting-edge AI paper ideas for a conference presentation . . .")
-
-    
-    temp = st.number_input('temperature',value=0.7)
-    p = st.number_input('top p',value=.9)
-    k = st.number_input('top k', value=40)
-    max_tokens = st.number_input('max token length',value=512)
     if st.button("Send"):
         with st.spinner("Generating response..."):
             st.session_state["messages"] += [{"role": "You", "content": prompt}]
             print(st.session_state["messages"][-1]["content"])
             
             message_response = get_messages(st.session_state["messages"][-1]["content"],temp,p,k,max_tokens)
-            
-            
             st.session_state["messages"] += [
                 {"role": "AI", "content": message_response}
             ]
@@ -119,6 +99,11 @@ with container:
         st.session_state["messages"] = BASE_PROMPT
         show_messages(text)
     st.markdown('*Chatbot code adapted from : https://github.com/ajvikram/streamlit-gpt')
+    st.markdown('## Model Parameters')
+    temp = st.number_input('temperature',value=0.7)
+    p = st.number_input('top p',value=.9)
+    k = st.number_input('top k', value=40)
+    max_tokens = st.number_input('max token length',value=512)
    
     st.markdown("""<h4>Caveats</h3><p style="font-size:1rem">For experimentation purposes only. The organizers cannot guarantee the veracity of outputs or warrant against potentially offensive output. This model does not record chat data or any personal information.</p><p>See <a href="https://huggingface.co/ArliAI">Arli AI Organization Card</a> for more information.</p>.
 </p>""",unsafe_allow_html=True)
