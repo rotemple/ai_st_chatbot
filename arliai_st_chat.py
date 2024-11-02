@@ -58,7 +58,7 @@ st.markdown(""" <style>
                     height:250px !important;
                 }
     textarea p{ font-size:1.15rem !important;
-                width:80% !important}
+                height:450px !important}
 .stColumn st-emotion-cache-keje6w e1f1d6gn3 {width:20% !important}
     """,unsafe_allow_html=True)
     
