@@ -57,8 +57,11 @@ st.markdown(""" <style>
                     font-size: 1.15rem !important;
                     height:250px !important;
                 }
-    textarea p{ font-size:1.15rem !important}
+    textarea p{ font-size:1.15rem !important;
+                width:80% !important}
     .st-emotion-cache-jkfxgf p {font-size: 1.25rem !important;
+
+    .stNumberInput {width:20% !important}
     }""",unsafe_allow_html=True)
     
 
