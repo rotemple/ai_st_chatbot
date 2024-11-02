@@ -59,9 +59,7 @@ st.markdown(""" <style>
                 }
     textarea p{ font-size:1.15rem !important;
                 width:80% !important}
-    .st-emotion-cache-jkfxgf p {font-size: 1.25rem !important;}
-
-    .stNumberInput {width:20% !important}
+.stColumn st-emotion-cache-keje6w e1f1d6gn3 {width:20% !important}
     """,unsafe_allow_html=True)
     
 
