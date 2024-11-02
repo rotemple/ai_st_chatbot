@@ -58,7 +58,7 @@ st.markdown(""" <style>
                     height:250px !important;
                 }
     textarea p{ font-size:1.15rem !important;
-                height:450px !important}
+                }
 .stColumn st-emotion-cache-keje6w e1f1d6gn3 {width:20% !important}
     """,unsafe_allow_html=True)
     
@@ -83,7 +83,7 @@ with container:
 with col1:
     text = st.empty()
     show_messages(text)   
-    prompt = st.text_area("Prompt:", value="Generate cutting-edge AI paper ideas for a conference presentation . . .",height=150)
+    prompt = st.text_area("Prompt:", value="Generate cutting-edge AI paper ideas for a conference presentation . . .",height=75)
 
 with col2:
     st.markdown('## Model Parameters')
