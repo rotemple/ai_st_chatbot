@@ -90,7 +90,7 @@ with col2:
     p = st.number_input('top p',value=.9)
     k = st.number_input('top k', value=40)
     max_tokens = st.number_input('max token length',value=512)
-with container:
+with st.container:
     if st.button("Send"):
         with st.spinner("Generating response..."):
             st.session_state["messages"] += [{"role": "You", "content": prompt}]
