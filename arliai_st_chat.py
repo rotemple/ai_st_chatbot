@@ -80,7 +80,7 @@ container = stylable_container(key="red_button",
                                """,
     )
 
-col1,col2 = st.columns(2)
+col1,col2 = st.columns(2,1)
 
 with container:
     st.markdown("""<h1 class="font">Llama 3.1 AI Paper/Panel Topic Generator</h1><h2>Built on <a href="https://www.arliai.com/">ARLI AI</a></h2>""", unsafe_allow_html=True)
