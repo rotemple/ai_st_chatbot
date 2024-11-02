@@ -11,7 +11,7 @@ def get_messages(prompt,temp, p, k, max_tokens):
     url = "https://api.arliai.com/v1/chat/completions"
     
     payload = json.dumps({
-      "model": "Meta-Llama-3.1-70B-Instruct",
+      "model": "Meta-Llama-3.1-8B-Instruct",
       "messages": [
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "Hello!"},
