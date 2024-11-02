@@ -60,8 +60,9 @@ st.markdown(""" <style>
     textarea p{ font-size:1.15rem !important;
                 }
 
-.st-ae st-af st-ag st-ah st-ai st-aj st-ak st-al st-am st-an st-ao st-ap st-aq st-ar st-as st-at st-au st-av st-aw st-ax st-ay st-az st-b0 st-b1 st-b2 st-b3 {height:75px !important}
-.stColumn st-emotion-cache-keje6w e1f1d6gn3 {width:20% !important}
+    #text_area_2 {min-height:50px !important;
+                    height:75px !important;
+                    }
     """,unsafe_allow_html=True)
     
 
