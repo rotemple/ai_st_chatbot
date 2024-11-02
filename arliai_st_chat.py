@@ -82,9 +82,7 @@ with container:
 
 with col1:
     text = st.empty()
-    show_messages(text)
-    
-    
+    show_messages(text)   
 with col2:
     st.markdown('## Model Parameters')
     #params
@@ -92,8 +90,11 @@ with col2:
     p = st.number_input('top p',value=.9)
     k = st.number_input('top k', value=40)
     max_tokens = st.number_input('max token length',value=512)
+
 with st.container():
     prompt = st.text_input("Prompt:", value="Generate cutting-edge AI paper ideas for a conference presentation . . .")
+
+with st.container():
     if st.button("Send"):
         with st.spinner("Generating response..."):
             st.session_state["messages"] += [{"role": "You", "content": prompt}]
