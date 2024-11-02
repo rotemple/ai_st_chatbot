@@ -39,7 +39,6 @@ def show_messages(text):
     messages_str = [
         f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
     ]
-    st.markdown("## Chat")
     text.text_area("", value=str("\n".join(messages_str)), height=150)
 
 BASE_PROMPT = [{"role": "AI", "content": "You are an AI expert who helps researchers."}]
@@ -84,6 +83,7 @@ with container:
     st.markdown("""<h1 class="font">Llama 3.1 AI Paper/Panel Topic Generator</h1><h2>Built on <a href="https://www.arliai.com/">ARLI AI</a></h2>""", unsafe_allow_html=True)
 
 with col1:
+    st.markdown("## Chat")
     text = st.empty()
     show_messages(text)   
     prompt = st.text_area("Prompt:", value="Generate cutting-edge AI paper ideas for a conference presentation . . .",height=75,key='prompt')
