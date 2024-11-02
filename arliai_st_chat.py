@@ -63,6 +63,8 @@ st.markdown(""" <style>
     textarea#text_area_2 {min-height:50px !important;
                     height:75px !important;
                     }
+
+    .st-emotion-cache-0 e1f1d6gn0 (width:25% !important}
     """,unsafe_allow_html=True)
     
 
