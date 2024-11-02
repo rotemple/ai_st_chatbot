@@ -91,8 +91,7 @@ with col2:
     k = st.number_input('top k', value=40)
     max_tokens = st.number_input('max token length',value=512)
 
-with st.container():
-    prompt = st.text_input("Prompt:", value="Generate cutting-edge AI paper ideas for a conference presentation . . .")
+prompt = st.text_input("Prompt:", value="Generate cutting-edge AI paper ideas for a conference presentation . . .")
 
 with st.container():
     if st.button("Send"):
