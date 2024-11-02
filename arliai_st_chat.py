@@ -6,7 +6,7 @@ from streamlit_extras.stylable_container import stylable_container
 st.set_page_config(layout='centered')
 
 
-def get_messages(prompt,temp, p, k, max_tokens):
+def get_messages(prompt,temp, p, k, max_tokens,repetition):
 
     url = "https://api.arliai.com/v1/chat/completions"
     
@@ -18,7 +18,7 @@ def get_messages(prompt,temp, p, k, max_tokens):
         {"role": "assistant", "content": "Hi!, how can I help you today?"},
         {"role": "user", "content": prompt}
       ],
-      "repetition_penalty": 1.1,
+      "repetition_penalty": repetition,
       "temperature": temp,
       "top_p": p,
       "top_k": k,
@@ -39,7 +39,8 @@ def show_messages(text):
     messages_str = [
         f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
     ]
-    text.text_area("Chat", value=str("\n".join(messages_str)), height=150)
+    st.markdown("## Chat")
+    text.text_area("", value=str("\n".join(messages_str)), height=150)
 
 BASE_PROMPT = [{"role": "AI", "content": "You are an AI expert who helps researchers."}]
 
@@ -93,6 +94,7 @@ with col2:
     temp = st.number_input('temperature',value=0.7)
     p = st.number_input('top p',value=.9)
     k = st.number_input('top k', value=40)
+    repetition = st.number_input('repetition_penalty',1.1)
     max_tokens = st.number_input('max token length',value=512)
 
 
@@ -102,7 +104,7 @@ with st.container():
             st.session_state["messages"] += [{"role": "You", "content": prompt}]
             print(st.session_state["messages"][-1]["content"])
                 
-            message_response = get_messages(st.session_state["messages"][-1]["content"],temp,p,k,max_tokens)
+            message_response = get_messages(st.session_state["messages"][-1]["content"],temp,p,k,max_tokens,repetition)
             st.session_state["messages"] += [
                     {"role": "AI", "content": message_response}
                 ]
