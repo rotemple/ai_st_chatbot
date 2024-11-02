@@ -85,13 +85,15 @@ with col1:
     show_messages(text)
     
     
-    prompt = st.text_input("Prompt:", value="Generate cutting-edge AI paper ideas for a conference presentation . . .")
 with col2:
+    st.markdown('## Model Parameters')
+    #params
     temp = st.number_input('temperature',value=0.7)
     p = st.number_input('top p',value=.9)
     k = st.number_input('top k', value=40)
     max_tokens = st.number_input('max token length',value=512)
 with st.container():
+    prompt = st.text_input("Prompt:", value="Generate cutting-edge AI paper ideas for a conference presentation . . .")
     if st.button("Send"):
         with st.spinner("Generating response..."):
             st.session_state["messages"] += [{"role": "You", "content": prompt}]
@@ -107,7 +109,6 @@ with st.container():
         st.session_state["messages"] = BASE_PROMPT
         show_messages(text)
     st.markdown('*Chatbot code adapted from : https://github.com/ajvikram/streamlit-gpt')
-    st.markdown('## Model Parameters')
     
    
     st.markdown("""<h4>Caveats</h3><p style="font-size:1rem">For experimentation purposes only. The organizers cannot guarantee the veracity of outputs or warrant against potentially offensive output. This model does not record chat data or any personal information.</p><p>See <a href="https://huggingface.co/ArliAI">Arli AI Organization Card</a> for more information.</p>.
