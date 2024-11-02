@@ -60,7 +60,7 @@ st.markdown(""" <style>
     textarea p{ font-size:1.15rem !important;
                 }
 
-    #text_area_2 {min-height:50px !important;
+    textarea#text_area_2 {min-height:50px !important;
                     height:75px !important;
                     }
     """,unsafe_allow_html=True)
