@@ -83,7 +83,7 @@ with container:
 with col1:
     text = st.empty()
     show_messages(text)   
-    prompt = st.text_area("Prompt:", value="Generate cutting-edge AI paper ideas for a conference presentation . . .",height=75)
+    prompt = st.text_area("Prompt:", value="Generate cutting-edge AI paper ideas for a conference presentation . . .",height=75,key='prompt')
 
 with col2:
     st.markdown('## Model Parameters')
