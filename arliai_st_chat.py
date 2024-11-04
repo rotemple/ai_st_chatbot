@@ -4,8 +4,6 @@ from streamlit_option_menu import option_menu
 from streamlit_extras.stylable_container import stylable_container
 
 st.set_page_config(layout='centered')
-
-
 def get_messages(prompt,temp, p, k, max_tokens,repetition):
 
     url = "https://api.arliai.com/v1/chat/completions"
@@ -61,7 +59,7 @@ st.markdown(""" <style>
                 }
 
     textarea#text_area_2 {min-height:50px !important;
-                    height:75px !important;
+                    height:150px !important;
                     }
 
     .st-emotion-cache-0 e1f1d6gn0 (width:25% !important}
