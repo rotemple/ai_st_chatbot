@@ -92,7 +92,7 @@ with col1:
     prompt = st.text_area("Prompt:", value="Generate questions about the text . . .",height=75,key='prompt')
 
 with col2:
-    st.markdown('##Llama 3.1 Model Parameters')
+    st.markdown('## Llama 3.1 Model Parameters')
     #params
     temp = st.number_input('temperature',value=0.7)
     p = st.number_input('top p',value=.9)
@@ -120,7 +120,7 @@ with st.container():
     st.markdown("""## Liability
 The creators of this application is not liable for any damages, loss, or problems that arise out of or are related to the use of its Services. 
 
-##Disclaimer
+## Disclaimer
 
 Your use of our Services is at your sole risk. The Service is provided on an "AS IS" and "AS AVAILABLE" basis. The Service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement or course of performance. We do not warrant that a) the Service will function uninterrupted, secure or available at any particular time or location; b) any errors or defects will be corrected; c) the Service is free of viruses or other harmful components; nor d) the results of using the Service will meet your requirements.""")
     st.markdown("""<h2>Caveats</h2><p style="font-size:1rem">For experimentation purposes only. The organizers cannot guarantee the veracity of outputs or warrant against potentially offensive output. This model does not record chat data or any personal information.</p><p>See <a href="https://huggingface.co/ArliAI">Arli AI Organization Card</a> for more information.</p>.
