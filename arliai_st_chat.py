@@ -81,7 +81,7 @@ container = stylable_container(key="red_button",
 col1,col2 = st.columns([.7,.3])
 
 with container:
-    st.markdown("""<h1 class="font">AI Paper/Panel Question Generator</h1><h2>Copy and paste a paper and generate possible questions from audiences<h3>Built on <a href="https://www.arliai.com/">ARLI AI</a></h3>""", unsafe_allow_html=True)
+    st.markdown("""<h1 class="font">AI Paper/Panel Question Generator</h1><h2>Copy and paste a paper and generate possible questions from audiences<h3>Built on <a href="https://www.arliai.com/">ARLI AI</a> by Ryan Omizo</h3>""", unsafe_allow_html=True)
 
 with col1:
     st.markdown("## Chat")
