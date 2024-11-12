@@ -90,7 +90,7 @@ with col1:
     prompt = st.text_area("Prompt:", value="Generate questions about the text . . .",height=75,key='prompt')
 
 with col2:
-    st.markdown('## Llama 3.1 Model Parameters')
+    st.markdown('## Llama 3.1 Instruct Model Parameters')
     #params
     temp = st.number_input('temperature',value=0.7)
     p = st.number_input('top p',value=.9)
